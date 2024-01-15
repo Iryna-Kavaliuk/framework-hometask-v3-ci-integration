@@ -7,6 +7,7 @@
     <groupId>com.epam.automation</groupId>
     <artifactId>framework-hometask-v3-ci-integration</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <url>https://github.com/Iryna-Kavaliuk/framework-hometask-v3-ci-integration</url>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
