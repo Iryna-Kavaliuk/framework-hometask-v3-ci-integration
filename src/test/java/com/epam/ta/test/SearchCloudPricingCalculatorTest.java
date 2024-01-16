@@ -5,7 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class SearchCloudPricingCalculatorTest extends CommonConditions {
+public class SearchCloudPricingCalculatorTest extends CommonConditionsTest {
 
   protected GoogleCloudHomePage homePage;
 
@@ -18,7 +18,7 @@ public class SearchCloudPricingCalculatorTest extends CommonConditions {
   }
 
   @Test(description = "Check that targeting search term is in the search results")
-  public void GCPCanBeFoundViaSearch() {
+  public void GCPCanBeFoundViaSearchTest() {
     homePage.openPage();
     homePage.enterSearchTerm(SEARCH_TERM);
     String targetLink = homePage.findTargetingLinkInSearchResults(RESULTING_TERM);

@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 import static com.epam.ta.test.SearchCloudPricingCalculatorTest.RESULTING_TERM;
 import static com.epam.ta.test.SearchCloudPricingCalculatorTest.SEARCH_TERM;
 
-public class GoogleCloudPricingCalculatorTest extends CommonConditions {
+public class GoogleCloudPricingCalculatorTest extends CommonConditionsTest {
   private GoogleCloudHomePage homePage;
   private GoogleCloudPricingCalculatorPage calculatorPage;
 
@@ -23,7 +23,7 @@ public class GoogleCloudPricingCalculatorTest extends CommonConditions {
   }
 
   @Test(description = "Check Google Cloud Calculator is opened")
-  public void GCPCalculatorIsOpenFromSearch() {
+  public void GCPCalculatorIsOpenFromSearchTest() {
     homePage.openPage();
     homePage.enterSearchTerm(SEARCH_TERM);
     String targetLink = homePage.findTargetingLinkInSearchResults(RESULTING_TERM);
@@ -32,7 +32,8 @@ public class GoogleCloudPricingCalculatorTest extends CommonConditions {
     Assert.assertTrue(calculatorPage.isPageOpened(), "Google Cloud Calculator is failed to open");
   }
 
-  @Test(description = "Check estimation price is calculated correctly", dependsOnMethods = "GCPCalculatorIsOpenFromSearch")
+  @Test(description = "Check estimation price is calculated correctly", dependsOnMethods =
+      "GCPCalculatorIsOpenFromSearchTest")
   public void GCPCalculatorPriceEstimatingTest() throws InterruptedException {
     calculatorPage.closeCookiesAlert();
 
